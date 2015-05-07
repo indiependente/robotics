@@ -84,7 +84,7 @@ def traverse(hor, ver, start, end, verbose = False):
 
 
 
-##################### vedi TAIL RECURSION
+#####################
 hor, ver = make_maze()
 
 for (a, b) in zip(hor, ver):
