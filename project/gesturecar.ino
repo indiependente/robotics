@@ -45,6 +45,10 @@ int speed = 50, rspeed = 0, lspeed = 0;
 
 void setup() {
 
+  // Use LED to signal that boot is over
+  pinMode(13, OUTPUT);
+  digitalWrite(13, HIGH);
+
   // Set interrupt pin as input
   pinMode(APDS9960_INT, INPUT);
 
@@ -150,7 +154,7 @@ void handleGesture() {
         }
         else if (STATUS == LFT && dirindex > 0){
           dirindex = 0;
-          movement(command, speeds[speedindex], speeds[dirindex]); 
+          movement(command, speeds[speedindex], speeds[dirindex]);
         }
         else if (STATUS == RGT){
           if (command == FORWARD)
@@ -220,7 +224,7 @@ void handleGesture() {
         break;
       default:
         Serial.println("NONE");
-        
+
     }
   }
 }
